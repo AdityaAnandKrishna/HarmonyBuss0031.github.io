@@ -1,0 +1,181 @@
+@import '_movies.scss';
+
+//COLOURS
+$red: #5b312c;
+$beige: #E2D6A3;
+$darkGrey: #2B2A2A;
+$yellow: #F3D762;
+$black: #191818;
+
+//FONTS
+$fancyFont: 'Della Respira', serif;
+$legibleFont: 'Tw Cen MT', serif;
+
+//MIXINS
+
+
+body{
+  background-color: $red;
+  font: 16px $legibleFont;
+}
+
+//this covers the entire width of the page v
+.container-fluid{
+  background-color: $black;
+  font: $yellow $fancyFont;
+}
+//end full width container ^
+
+h2{
+  display:inline-block;
+  text-align: center;
+  font: 3.5em $fancyFont;
+}
+
+h3{
+  line-height: 1.5;
+  font: 2em $legibleFont;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  color:$beige;
+  &:hover{
+    color:$red;
+    .footer &{
+        background-color:$beige;
+        cursor:pointer;
+        }
+  }
+}
+
+/*HEADER------------*/
+.header {
+    /*logo*/
+    img{
+      width:100px;
+      height:auto;
+      float:left;
+    }
+}
+
+/*VIDEO CAROUSEL -----------*/
+.videoCarousel {
+    background-color:#000;
+    text-align: center;
+    min-height:375px;
+    iframe{
+      padding-top:25px;
+      min-height:349px;
+      height:auto;
+      width:100%;
+    }
+}
+
+
+
+/*SLOGAN-----------------*/
+.slogan{
+    background-color: $beige;
+    min-height:100%;
+    font-size:.9em;
+    color: $darkGrey;
+    text-align: center;
+    padding:2%;
+    h3{
+      font-style:italic;
+    }
+}
+
+/*CATEGORIES---------------*/
+.categories{
+  background-color: $darkGrey;
+  text-align: center;
+  padding:5px;
+  img{
+    width:50%;
+    height:auto;
+    margin:35px 15px 15px 15px;
+    &.hovering{
+      animation: hover .25s forwards;
+    }
+  }
+  a{
+    display:inline-block;
+    margin-top:80px;
+    background-color: $red;
+    border: 1px solid $beige;
+    color:$beige;
+    font-size: 24pt;
+    font-family: $fancyFont;
+    padding:15px;
+    &:hover{
+      color:$red;
+      background-color:$beige;
+      border: 1px solid $red;
+      cursor:pointer;
+    }
+  }
+}
+
+.pageSelect h4{
+  font-family:$legibleFont;
+  font-weight:bold;
+  font-size: 1.5em;
+}
+
+
+
+
+/*FOOTER-------------*/
+.footer{
+  background-color: $black;
+  padding:15px;
+  font-size:1.4em;
+  color:$beige;
+  font-family: $legibleFont;
+  li h4{
+    font-size:1.6em;
+  }
+  .footerRight{
+    margin-top:60px;
+  }
+  .copyright{
+    position:absolute;
+    bottom:-120px;
+  }
+}
+
+
+
+/*ICONS FOR SWITCHING PAGES (on all pages but homepage)*/
+.search {
+  h3{
+    margin-top:25%;
+  }
+  img{
+    margin-top:10px;
+    width:60%;
+    height:auto;
+    &:hover{
+        animation: hover .25s forwards;
+    }
+  }
+}
+
+
+/*--------Animations-----------*/
+@keyframes hover{
+  0%{
+    border:1px solid $beige;
+    border-radius:50%;
+  }
+  100%{
+    border:5px solid $beige;
+    border-radius:50%;
+  }
+
+}

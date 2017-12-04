@@ -1,0 +1,131 @@
+//COLOURS
+$red: #683D38;
+$beige: #E2D6A3;
+$darkGrey: #2B2A2A;
+$fancyFont: 'Della Respira', serif;
+$legibleFont: 'Tw Cen MT', serif;
+
+
+//This will let me select the last nth elements
+@mixin last($num) {
+   &:nth-last-child(-n + #{$num}) {
+    @content;
+  }
+}
+//This lets me do stuff to every 2nd element
+@mixin odds() {
+   &:nth-child(odd) {
+    @content;
+  }
+}
+
+
+
+.pageTitle{
+  background-color: #2B2A2A;
+  text-align: center;
+  img{
+    width:200px;
+    height:auto;
+    margin: auto;
+    margin-top: 50px;
+  }
+  h2{
+    color: $beige;
+    margin-bottom:20px;
+  }
+}
+/*Search---------------------------------------------*/
+.search{
+  @extend .slogan;
+  h3{
+    color:$beige;
+    background-color:$red;
+    border:$red 1px solid;
+    cursor: pointer;
+    &:hover{
+      animation:btnHover .25s ease forwards;
+    }
+  }
+}
+
+
+
+/*MOVIE, ACTOR, DIRECTOR DESCRIPTIONS-----------------------------------*/
+.movies, .actors, .directors{
+  padding:20px 10px 20px 10px;
+  min-height:200px;
+  background-color:$beige;
+  /*This inverts colors every second movie*/
+  @include odds(){
+    background-color:$darkGrey;
+    color:$beige;
+    a{
+      color:$beige;
+    }
+  }
+  h3{
+    font-size:28pt;
+    font-family: $fancyFont;
+  }
+  /*This is the movie description*/
+  p{
+    font-size:1.5em;
+    @include last(3)
+    {
+      font-family: $legibleFont;
+    }
+  }
+  /*This is the movie image*/
+  .clipImg img{
+    height:auto;
+    min-height:100px;
+    margin-top:25px;
+    max-width:400px;
+  }
+  /*This is the actor image */
+ .ActorImg img, .DirectorImg img{
+   @extend .clipImg;
+   max-width:220px;
+   height:auto;
+   max-height:300px;
+   }
+  /*ACTOR / DIRECTOR INFO */
+  .actorInfo , .directorInfo{
+  font-weight:normal;
+  font-size: 1.2em;
+      h4{
+        font-family: $fancyFont;
+        font-size:1.3em;
+        text-decoration: underline;
+      }
+      .bio, p{
+        font-family: $legibleFont;
+        font-size:1.1em;
+      }
+  }
+  a{
+    color:$red;
+    margin-right:10px;
+    font-size:.85em;
+    font-weight:lighter;
+    &:hover{
+      color:$beige;
+      background-color:$red;
+    }
+  }
+}
+/*-----------------------------------------------------*/
+
+
+
+@keyframes btnHover{
+  0%{color:$beige;
+    background-color:$red;
+    border:$red 1px solid;
+  }
+  100%{border:$darkGrey 1px solid;
+  background-color:$beige;
+  color:$darkGrey;
+  }
+}

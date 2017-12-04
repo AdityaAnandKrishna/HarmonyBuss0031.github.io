@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--Hello.  This is my midterm.  Harmony Hawthorn F2017  -->
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Della+Respira" rel="stylesheet">
+    <title>Movies | Sleeping Dragon | Martial Arts Movie Listings</title>
+  </head>
+  <body>
+
+      <!--*stuff in this div   vvv  will always be full width of window*/-->
+      <div class="container-fluid">
+
+          <div class='row header'>
+            <div class='col-md-5 col-sm-5'>
+              <a href="index.html"><img src="images/SleepingDragonLogo.png"/></a>
+            </div>
+            <div class='col-md-7 col-sm-7'>
+              <h2><a href="index.html">Sleeping Dragon</a></h2>
+            </div>
+          </div>
+
+      </div>
+
+      <!--/*stuff in this div  vvv  will do the fancy bootstrap stuff */-->
+      <div class="container" >
+
+        <!--ICONS-->
+        <div class='row pageTitle'>
+          <div class='col-md-4'>
+          </div>
+          <div class='col-md-4'>
+            <img src="images/movieListIcon.png"/><br/>
+            <h2>Movies</h2>
+          </div>
+          <div class='col-md-4'>
+          </div>
+        </div>
+
+      <!--Search that is actually just sorting right now-->
+        <div class='row search'>
+          <div class='col-md-1 col-sm-1 col-xs-2'>
+          </div>
+          <div class='pageSelect col-md-2 col-sm-3 col-xs-8'>
+              <a href="actors.html"><img src="images/actorsIcon.png"/></a>
+              <h4>Actors</h4>
+          </div>
+          <div class='col-md-2 col-sm-1 col-xs-3'>
+          </div>
+          <div class='col-md-2 col-sm-3 col-xs-6'>
+            <h3 onclick="sortMovies()">< A/Z ></h3>
+          </div>
+          <div class='col-md-2 col-sm-1 col-xs-4'>
+          </div>
+          <div class='pageSelect col-md-2 col-sm-3 offset-sm-1 col-xs-8'>
+            <a href="directors.html"><img src="images/directorsIcon.png"/></a>
+            <h4>Directors</h4>
+          </div>
+          <div class='col-md-1 col-sm-1 col-xs-1'>
+          </div>
+        </div>
+
+          <!--This is the movie list vvv -->
+        <div id='movies'>
+        </div>
+
+      </div>
+
+      <div class="container-fluid">
+          <div class='row footer'>
+            <div class='col-md-2 col-sm-1'>
+            </div>
+            <div class='col-md-2 col-sm-6'>
+              <ul class="footerLeft">
+                <li><h4>Sources</h4></li>
+                <li><a href='documents/sources/sources_actorImages.pdf'>Actor Images</a></li>
+                <li><a href='documents/sources/sources_directorImages.pdf'>Director Images</a></li>
+              </ul>
+            </div>
+            <div class='col-md-2 col-sm-6'>
+              <ul class="footerRight">
+                <li><a href='documents/sources/sources_movieImages.pdf'>Movie Images</a></li>
+                <li><a href='documents/sources/sources_actor-directorInfo.pdf'>Actor/Director Information</a></li>
+              </ul>
+            </div>
+            <div class='col-md-4 col-sm-1'>
+            </div>
+            <div class='col-md-2 col-sm-12'>
+              <span class="copyright">© 2017 Harmony Hawthorn</span>
+            </div>
+          </div>
+      </div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/movieInfo.js"></script>
+    <script src="js/movies.js"></script>
+  </body>
+</html>
